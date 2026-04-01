@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const Footer = () => (
-  <footer className="border-t border-border bg-card py-16">
+  <footer className="border-t border-border bg-card/70 py-16 backdrop-blur-sm">
     <div className="container">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-10 kc-animate-fade-up kc-delay-150">
         <div className="space-y-4">
           <div className="flex items-center gap-3">
             <img src={logo} alt="KodeCrafters" className="h-10 w-10 object-contain" />

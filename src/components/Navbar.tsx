@@ -16,31 +16,39 @@ const Navbar = () => {
   const { pathname } = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
+    <nav className="fixed top-0 left-0 right-0 z-50 kc-glass border-b border-border/60">
       <div className="container flex h-20 items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
+        <Link to="/" className="group flex items-center gap-3">
           <img src={logo} alt="KodeCrafters" className="h-[72px] w-[72px] object-contain" />
-          <span className="font-heading text-xl font-bold">
+          <span className="font-heading text-xl font-bold tracking-tight">
             Kode<span className="text-primary">Crafters</span>
           </span>
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8 group">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className={`font-medium text-sm tracking-wide transition-colors hover:text-primary ${
+              className={`relative font-medium text-sm tracking-wide transition-colors hover:text-primary ${
                 pathname === link.to ? "text-primary" : "text-muted-foreground"
               }`}
             >
-              {link.label}
+              <span className="relative">
+                {link.label}
+                <span
+                  className={`pointer-events-none absolute -bottom-2 left-0 h-[2px] w-full origin-left scale-x-0 rounded-full bg-gradient-to-r from-primary/20 via-primary to-[hsl(var(--gold-glow))] transition-transform duration-300 ${
+                    pathname === link.to ? "scale-x-100" : "group-hover:scale-x-100"
+                  }`}
+                  aria-hidden="true"
+                />
+              </span>
             </Link>
           ))}
           <Link
             to="/careers"
-            className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110 glow-gold"
+            className="kc-btn kc-btn-primary px-5 py-2.5 text-sm"
           >
             Join Us
           </Link>
