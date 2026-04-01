@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Code2, Smartphone, Palette, Cloud, ArrowRight, Zap, Shield, Users, Bot, BarChart3 } from "lucide-react";
 import { motion } from "framer-motion";
-import MoonOrbit from "@/components/animations/MoonOrbit";
+import CinematicHero from "@/components/hero/CinematicHero";
 
 const services = [
   { icon: Code2, title: "Web Development", desc: "Scalable web applications built with modern frameworks and best practices." },
@@ -22,60 +22,7 @@ const stats = [
 
 const Index = () => (
   <Layout>
-    {/* Hero */}
-    <section className="relative overflow-hidden py-28 md:py-40">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-transparent" />
-      <div className="container relative">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2 md:gap-14">
-          {/* Text */}
-          <div className="text-center md:text-left space-y-7">
-            <motion.h1
-              initial={{ opacity: 0, y: 36 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.95, ease: [0.2, 0.8, 0.2, 1] }}
-              className="font-heading text-5xl md:text-7xl font-bold leading-tight tracking-tight"
-            >
-              We Craft <span className="text-gradient-gold">Digital</span> Excellence
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 28 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.15, duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}
-              className="text-lg md:text-xl text-muted-foreground max-w-xl md:max-w-none mx-auto md:mx-0 leading-relaxed"
-            >
-              A software house dedicated to turning bold ideas into powerful, scalable digital products.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.28, duration: 0.85, ease: [0.2, 0.8, 0.2, 1] }}
-              className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
-            >
-              <Link to="/projects" className="kc-btn kc-btn-primary">
-                <motion.span whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-flex items-center gap-2">
-                  View Our Work <ArrowRight size={18} />
-                </motion.span>
-              </Link>
-              <Link to="/about" className="kc-btn kc-btn-secondary">
-                Learn More
-              </Link>
-            </motion.div>
-          </div>
-
-          {/* Animation */}
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.12, duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}
-            className="relative mx-auto flex items-center justify-center md:justify-end"
-          >
-            <MoonOrbit className="opacity-95 scale-[0.92] md:scale-100" />
-          </motion.div>
-        </div>
-      </div>
-    </section>
+    <CinematicHero />
 
     {/* Stats */}
     <section className="py-16 border-y border-border bg-card">
