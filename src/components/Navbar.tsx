@@ -19,7 +19,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
       <div className="container flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="KodeCrafters" className="h-16 w-16 object-contain" />
+          <img src={logo} alt="KodeCrafters" className="h-[72px] w-[72px] object-contain" />
           <span className="font-heading text-xl font-bold">
             Kode<span className="text-primary">Crafters</span>
           </span>
