@@ -52,13 +52,13 @@ export default function CinematicHero() {
               className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
             >
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <Link to="/careers" className="kc-btn kc-btn-primary">
-                  Start Your Project <ArrowRight size={18} />
+                <Link to="/about" className="kc-btn kc-btn-primary">
+                  Contact Us <ArrowRight size={18} />
                 </Link>
               </motion.div>
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <Link to="/about" className="kc-btn kc-btn-secondary">
-                  Learn More
+                <Link to="/stacks" className="kc-btn kc-btn-secondary">
+                  View Stacks
                 </Link>
               </motion.div>
             </motion.div>

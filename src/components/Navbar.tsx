@@ -5,9 +5,9 @@ import logo from "@/assets/logo.png";
 
 const navLinks = [
   { to: "/", label: "Home" },
+  { to: "/stacks", label: "Stacks" },
   { to: "/team", label: "Team" },
   { to: "/about", label: "About Us" },
-  { to: "/careers", label: "Careers" },
 ];
 
 const Navbar = () => {
@@ -45,11 +45,8 @@ const Navbar = () => {
               </span>
             </Link>
           ))}
-          <Link
-            to="/careers"
-            className="kc-btn kc-btn-primary px-5 py-2.5 text-sm"
-          >
-            Join Us
+          <Link to="/about" className="kc-btn kc-btn-primary px-5 py-2.5 text-sm">
+            Contact Us
           </Link>
         </div>
 

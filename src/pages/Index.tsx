@@ -115,7 +115,7 @@ const Index = () => (
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Ready to Build Something <span className="text-gradient-gold">Great</span>?</h2>
         <p className="text-muted-foreground mb-8 max-w-md mx-auto">Let's turn your vision into reality. Get in touch and start your project today.</p>
         <Link
-          to="/careers"
+          to="/about"
           className="kc-btn kc-btn-primary inline-flex"
         >
           Get Started <ArrowRight size={18} />
