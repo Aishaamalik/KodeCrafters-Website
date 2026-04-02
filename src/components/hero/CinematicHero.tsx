@@ -6,7 +6,7 @@ import Clouds from "./Clouds";
 
 export default function CinematicHero() {
   return (
-    <section className="relative overflow-hidden py-24 md:py-36">
+    <section className="relative overflow-hidden py-14 md:py-24">
       {/* Sky gradient */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(900px_circle_at_50%_20%,rgba(255,215,0,0.10),transparent_55%),radial-gradient(800px_circle_at_20%_15%,rgba(255,195,0,0.06),transparent_55%),linear-gradient(180deg,#000000,#050505)]" />
 
@@ -14,7 +14,7 @@ export default function CinematicHero() {
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(900px_circle_at_50%_40%,rgba(255,255,255,0.05),transparent_60%)]" />
 
       <div className="container relative">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2 md:gap-16">
+        <div className="mx-auto -mt-14 md:-mt-20 grid max-w-6xl items-center gap-10 md:grid-cols-2 md:gap-16">
           {/* Copy */}
           <div className="text-center md:text-left space-y-7">
             <motion.h1
