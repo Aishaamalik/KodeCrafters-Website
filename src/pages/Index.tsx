@@ -1,18 +1,37 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { Code2, Smartphone, Palette, Cloud, ArrowRight, Zap, Shield, Users, Bot, BarChart3 } from "lucide-react";
+import { Code2, Smartphone, ArrowRight, Bot, Rocket, Boxes, Zap, Shield, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import CinematicHero from "@/components/hero/CinematicHero";
 import Reveal from "@/components/animations/Reveal";
 import CountUp from "@/components/animations/CountUp";
 
 const services = [
-  { icon: Code2, title: "Web Development", desc: "Scalable web applications built with modern frameworks and best practices." },
-  { icon: Smartphone, title: "Mobile Apps", desc: "Native and cross-platform mobile experiences that users love." },
-  { icon: Palette, title: "UI/UX Design", desc: "Pixel-perfect interfaces designed for engagement and conversion." },
-  { icon: Cloud, title: "Cloud Solutions", desc: "Robust cloud infrastructure that scales with your business." },
-  { icon: Bot, title: "AI Chatbots", desc: "Intelligent conversational agents that automate support and boost engagement 24/7." },
-  { icon: BarChart3, title: "Data Analysis", desc: "AI-powered analytics transforming raw data into actionable business insights." },
+  {
+    icon: Bot,
+    title: "Artificial Intelligence",
+    desc: "AI that solves real problems, not just buzzword bingo. LLM chatbots, voice apps, custom AI — anything that can help your business.",
+  },
+  {
+    icon: Rocket,
+    title: "Product Development",
+    desc: "From napkin sketch to launch-ready product. We design and build AI & MVPs that don’t just demo well, but scale into full-fledged businesses.",
+  },
+  {
+    icon: Code2,
+    title: "Web Development",
+    desc: "Fast, reliable, scalable websites. We design websites which actually do the job, not just look fancy.",
+  },
+  {
+    icon: Smartphone,
+    title: "Mobile Development",
+    desc: "iOS & Android apps that look good, feel smooth, and hold up at scale.",
+  },
+  {
+    icon: Boxes,
+    title: "Custom Software",
+    desc: "Not every problem fits into an off-the-shelf box. We design and build software that matches your workflow.",
+  },
 ];
 
 const stats = [
@@ -50,8 +69,10 @@ const Index = () => (
     <section className="py-24">
       <div className="container">
         <div className="text-center mb-16">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold">What We <span className="text-gradient-gold">Build</span></h2>
-          <p className="text-muted-foreground mt-3 max-w-md mx-auto">End-to-end digital solutions crafted with precision.</p>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold">Services</h2>
+          <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
+            Custom Web and Mobile App Development Solutions for Modern Businesses
+          </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, idx) => (

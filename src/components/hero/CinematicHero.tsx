@@ -57,8 +57,8 @@ export default function CinematicHero() {
                 </Link>
               </motion.div>
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <Link to="/projects" className="kc-btn kc-btn-secondary">
-                  View Projects
+                <Link to="/about" className="kc-btn kc-btn-secondary">
+                  Learn More
                 </Link>
               </motion.div>
             </motion.div>

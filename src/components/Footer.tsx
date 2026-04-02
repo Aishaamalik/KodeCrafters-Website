@@ -19,7 +19,7 @@ const Footer = () => (
         <div>
           <h4 className="font-heading font-semibold text-sm mb-4 text-primary">Navigate</h4>
           <div className="space-y-2">
-            {["/", "/projects", "/team", "/about", "/careers"].map((path) => (
+            {["/", "/team", "/about", "/careers"].map((path) => (
               <Link key={path} to={path} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 {path === "/" ? "Home" : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
               </Link>
