@@ -17,13 +17,23 @@ export default function CinematicHero() {
         <div className="mx-auto -mt-14 md:-mt-20 grid max-w-6xl items-center gap-10 md:grid-cols-2 md:gap-16">
           {/* Copy */}
           <div className="text-center md:text-left space-y-7">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/30 px-4 py-2 text-sm text-muted-foreground backdrop-blur-sm"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_18px_hsl(var(--primary)_/_0.55)]" />
+              We Build Scalable Software Solutions
+            </motion.div>
+
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.05, ease: [0.2, 0.8, 0.2, 1] }}
               className="font-heading text-5xl md:text-7xl font-bold leading-tight tracking-tight"
             >
-              We Craft <span className="text-gradient-gold">Digital</span> Excellence
+              Build & Scale Your <span className="text-gradient-gold">Next Big</span> Product
             </motion.h1>
 
             <motion.p
@@ -32,7 +42,7 @@ export default function CinematicHero() {
               transition={{ delay: 0.12, duration: 1, ease: [0.2, 0.8, 0.2, 1] }}
               className="text-lg md:text-xl text-muted-foreground max-w-xl md:max-w-none mx-auto md:mx-0 leading-relaxed"
             >
-              A software house dedicated to turning bold ideas into powerful, scalable digital products.
+              From concept to launch-ready systems, we design and build premium digital products that stay fast, reliable, and future-proof.
             </motion.p>
 
             <motion.div
@@ -42,13 +52,13 @@ export default function CinematicHero() {
               className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
             >
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <Link to="/projects" className="kc-btn kc-btn-primary">
-                  View Our Work <ArrowRight size={18} />
+                <Link to="/careers" className="kc-btn kc-btn-primary">
+                  Start Your Project <ArrowRight size={18} />
                 </Link>
               </motion.div>
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <Link to="/about" className="kc-btn kc-btn-secondary">
-                  Learn More
+                <Link to="/projects" className="kc-btn kc-btn-secondary">
+                  View Projects
                 </Link>
               </motion.div>
             </motion.div>

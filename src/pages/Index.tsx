@@ -3,6 +3,8 @@ import Layout from "@/components/Layout";
 import { Code2, Smartphone, Palette, Cloud, ArrowRight, Zap, Shield, Users, Bot, BarChart3 } from "lucide-react";
 import { motion } from "framer-motion";
 import CinematicHero from "@/components/hero/CinematicHero";
+import Reveal from "@/components/animations/Reveal";
+import CountUp from "@/components/animations/CountUp";
 
 const services = [
   { icon: Code2, title: "Web Development", desc: "Scalable web applications built with modern frameworks and best practices." },
@@ -25,16 +27,24 @@ const Index = () => (
     <CinematicHero />
 
     {/* Stats */}
-    <section className="py-16 border-y border-border bg-card">
+    <motion.section
+      className="py-16 border-y border-border bg-card"
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
+      transition={{ duration: 0.75, ease: [0.2, 0.8, 0.2, 1] }}
+    >
       <div className="container grid grid-cols-2 md:grid-cols-4 gap-8">
-        {stats.map((s) => (
-          <div key={s.label} className="text-center kc-animate-fade-up">
-            <div className="font-heading text-4xl font-bold text-primary">{s.value}</div>
+        {stats.map((s, idx) => (
+          <Reveal key={s.label} delayMs={idx * 100} className="text-center">
+            <div className="font-heading text-4xl font-bold text-primary">
+              <CountUp value={s.value} />
+            </div>
             <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
-          </div>
+          </Reveal>
         ))}
       </div>
-    </section>
+    </motion.section>
 
     {/* Services */}
     <section className="py-24">
@@ -44,23 +54,12 @@ const Index = () => (
           <p className="text-muted-foreground mt-3 max-w-md mx-auto">End-to-end digital solutions crafted with precision.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s) => (
-            <motion.div
-              key={s.title}
-              className="kc-card group"
-              onMouseMove={(e) => {
-                const el = e.currentTarget;
-                const r = el.getBoundingClientRect();
-                el.style.setProperty("--mx", `${((e.clientX - r.left) / r.width) * 100}%`);
-                el.style.setProperty("--my", `${((e.clientY - r.top) / r.height) * 100}%`);
-              }}
-              whileHover={{ y: -10, scale: 1.01 }}
-              transition={{ type: "spring", stiffness: 260, damping: 22 }}
-            >
+          {services.map((s, idx) => (
+            <Reveal key={s.title} delayMs={idx * 120} className="kc-card group p-8">
               <s.icon className="h-10 w-10 text-primary mb-5 drop-shadow-[0_0_18px_hsl(var(--primary)/0.25)]" />
               <h3 className="font-heading font-semibold text-lg mb-2">{s.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-            </motion.div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -77,12 +76,12 @@ const Index = () => (
             { icon: Zap, title: "Fast Delivery", desc: "Agile development with rapid iteration cycles." },
             { icon: Shield, title: "Battle-Tested", desc: "Enterprise-grade security and reliability standards." },
             { icon: Users, title: "Dedicated Teams", desc: "A team that becomes an extension of yours." },
-          ].map((item) => (
-            <div key={item.title} className="text-center space-y-3">
+          ].map((item, idx) => (
+            <Reveal key={item.title} delayMs={idx * 100} className="text-center space-y-3">
               <item.icon className="h-10 w-10 text-primary mx-auto" />
               <h3 className="font-heading font-semibold">{item.title}</h3>
               <p className="text-sm text-muted-foreground">{item.desc}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -91,14 +90,16 @@ const Index = () => (
     {/* CTA */}
     <section className="py-24">
       <div className="container text-center">
-        <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Ready to Build Something <span className="text-gradient-gold">Great</span>?</h2>
+        <Reveal className="space-y-4" delayMs={0}>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Ready to Build Something <span className="text-gradient-gold">Great</span>?</h2>
         <p className="text-muted-foreground mb-8 max-w-md mx-auto">Let's turn your vision into reality. Get in touch and start your project today.</p>
         <Link
           to="/careers"
-          className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3.5 font-semibold text-primary-foreground transition-all hover:brightness-110 glow-gold"
+          className="kc-btn kc-btn-primary inline-flex"
         >
           Get Started <ArrowRight size={18} />
         </Link>
+        </Reveal>
       </div>
     </section>
   </Layout>
